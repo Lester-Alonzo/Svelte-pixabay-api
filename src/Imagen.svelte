@@ -16,7 +16,7 @@
     .contenido{
         display: grid;
         gap: 1rem;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         text-align: center;
     }
     .card{
@@ -53,6 +53,12 @@
     @media screen and (max-width:600px){
         .contenido{
             grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+        }
+    }
+@media screen and (min-width:1000px){
+        .contenido{
+            grid-template-columns: repeat(3,1fr);
         }
     }
 </style>
