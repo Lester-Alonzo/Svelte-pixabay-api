@@ -14,5 +14,19 @@
         border: none;
         border-bottom: 3px solid white;
         color: white;
+        text-align: center;
+    }
+    input:focus{
+        border-bottom:4px solid yellowgreen;
+        color: yellowgreen;
+    }
+
+    button{
+        border: none;
+        background-color: rgb(32, 32, 32);
+        padding: 1em;
+        margin-left: 1em;
+        color: white;
+        border-radius: 1rem;
     }
 </style>
