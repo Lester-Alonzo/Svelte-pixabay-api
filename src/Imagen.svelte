@@ -9,7 +9,7 @@
              <!-- content here -->
              <div class="card" in:scale out:fade>
              <img src={item.previewURL} alt="img">
-             <a href={item.largeImageURL} target="_balnk">Ver en sitio</a>
+             <a href={item.largeImageURL} target="_balnk">Ver Imagen</a>
              </div>
         {/each}
     </div>
@@ -37,13 +37,17 @@
     }
     .card a{
         color: white;
-        border: 1px solid red;
         width: 30%;
-        margin: auto;
+        margin:1rem  auto;
         padding: 1rem;
         border-radius: 1rem;
-        background-color: gray;
+        background-color: rgb(32, 32, 32);
+        box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.493);
         text-decoration: none;
         cursor: pointer;
+        font-weight: bold;
+    }
+    .card a:hover{
+        background-color: yellowgreen;
     }
 </style>
