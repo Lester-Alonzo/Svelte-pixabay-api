@@ -1,7 +1,6 @@
 <script>
     import {scale, fade} from 'svelte/transition'
     export let imagenes 
-    console.log(imagenes);
 </script>
 
     <div class="contenido">
@@ -22,6 +21,7 @@
     }
     .card{
         width: 70%;
+        margin: 0 auto;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -49,5 +49,10 @@
     }
     .card a:hover{
         background-color: yellowgreen;
+    }
+    @media screen and (max-width:600px){
+        .contenido{
+            grid-template-columns: 1fr;
+        }
     }
 </style>
