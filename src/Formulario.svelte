@@ -32,4 +32,9 @@
     button:active{
         background-color: yellowgreen;
     }
+    @media screen and (max-width:600px){
+        form{
+            text-align: center;
+        }
+    }
 </style>
