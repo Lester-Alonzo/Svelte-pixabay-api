@@ -1,4 +1,5 @@
 <script>
+    import {scale, fade} from 'svelte/transition'
     export let imagenes 
     console.log(imagenes);
 </script>
@@ -6,7 +7,7 @@
     <div class="contenido">
         {#each imagenes as item}
              <!-- content here -->
-             <div class="card">
+             <div class="card" in:scale out:fade>
              <img src={item.previewURL} alt="img">
              <a href={item.largeImageURL} target="_balnk">Ver en sitio</a>
              </div>
@@ -18,14 +19,14 @@
         gap: 1rem;
         grid-template-columns: repeat(3, 1fr);
         text-align: center;
-        border: 1px solid pink;
     }
     .card{
-        width: 80%;
+        width: 70%;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        border: 1px solid red;
+        background-color: rgb(43, 43, 43);
+        box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.493);
         padding: 1rem;
         border-radius: 1rem;
         text-align: center;
@@ -42,5 +43,7 @@
         padding: 1rem;
         border-radius: 1rem;
         background-color: gray;
+        text-decoration: none;
+        cursor: pointer;
     }
 </style>

@@ -44,13 +44,13 @@ const nueva = e =>{
 </div>
 
 <style>
-  span,h1, h2{
+  span, h2{
     display: block;
     color: white;
     text-align: center;
   }
   .contenedor{
     margin: auto;
-    border: 1px solid greenyellow;
+    /* border: 1px solid greenyellow; */
   }
 </style>
