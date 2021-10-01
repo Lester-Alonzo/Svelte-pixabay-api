@@ -17,7 +17,8 @@
         display: grid;
         gap: 1rem;
         grid-template-columns: repeat(3, 1fr);
-        justify-content: center;
+        text-align: center;
+        border: 1px solid pink;
     }
     .card{
         width: 80%;

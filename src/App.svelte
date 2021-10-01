@@ -1,6 +1,8 @@
 <script>
 import Formulario from './Formulario.svelte'
 import Imagen from './Imagen.svelte'
+import Header from './Header.svelte'
+import Spinner from './Spinner.svelte'
 let espera = false
  let promesa
  const api =  async (dato) => {
@@ -18,13 +20,16 @@ const nueva = e =>{
  
  
 </script>
-<Formulario on:submit={nueva} />
+<Header>
 
+<Formulario on:submit={nueva} />
+</Header>
+<div class="contenedor">
 {#if espera}
    <!-- content here -->
    {#await promesa}
      <!-- promise is pending -->
-     <h1>Cargando....</h1>
+     <Spinner/>
    {:then valor}
      <!-- promise was fulfilled -->
     <Imagen imagenes={valor}/>
@@ -36,8 +41,16 @@ const nueva = e =>{
    <!-- else content here -->
    <span>Realiza una busqueda</span>
 {/if}
+</div>
+
 <style>
-  span,h1{
+  span,h1, h2{
+    display: block;
     color: white;
+    text-align: center;
+  }
+  .contenedor{
+    margin: auto;
+    border: 1px solid greenyellow;
   }
 </style>
