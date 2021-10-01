@@ -7,7 +7,7 @@ let espera = false
  let promesa
  const api =  async (dato) => {
   const key = "23547014-a2604cbac9ac5f20f341a38e6";
-  const url = ` https://pixabay.com/api/?key=${key}&q=${dato}&per_page=${"30"}&page=${"1"}`;
+  const url = ` https://pixabay.com/api/?key=${key}&q=${dato}&per_page=${"50"}&page=${"1"}`;
   const res = await fetch(url);
   const imagens = await res.json();
   return imagens.hits
