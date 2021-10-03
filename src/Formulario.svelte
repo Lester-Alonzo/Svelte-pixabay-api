@@ -1,6 +1,4 @@
 <script>
-
-
 </script>
 <form action="" on:submit|preventDefault>
     <input type="text" name="busqueda" placeholder="Ingresa una busqueda"> 

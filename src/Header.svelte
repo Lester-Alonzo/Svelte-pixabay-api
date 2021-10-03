@@ -8,7 +8,7 @@
 
 <style>
     .contenido{
-        height: 8rem;
+        height: 9rem;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -19,5 +19,10 @@
         background-color: rgb(43, 43, 43);
         position:sticky;
         top: 2px;
+    }
+    @media screen and (max-width:600px){
+        .contenido{
+            height: 11rem;
+        }
     }
 </style>
