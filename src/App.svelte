@@ -3,15 +3,20 @@ import Formulario from './Formulario.svelte'
 import Imagen from './Imagen.svelte'
 import Header from './Header.svelte'
 import Spinner from './Spinner.svelte'
+import Navegacion from './Navegacion.svelte'
 let espera = false
  let promesa
  let busquedaG
+ let filtro
 let fil
- const api =  async (dato, fil) => {
+let paginas
+let count = 1
+ const api =  async (dato, fil, count) => {
   const key = "23547014-a2604cbac9ac5f20f341a38e6";
-  const url = ` https://pixabay.com/api/?key=${key}&q=${dato}&per_page=${"50"}&page=${"2"}&order=${fil}`;
+  const url = ` https://pixabay.com/api/?key=${key}&q=${dato}&per_page=${"50"}&page=${count}&order=${fil}`;
   const res = await fetch(url);
   const imagens = await res.json();
+  paginas = imagens.totalHits / 50
   return imagens.hits
 };
 
@@ -21,8 +26,24 @@ const nueva = e =>{
    espera = true
 }
 const cambio = e =>{
+  filtro = e.target.value
    promesa = api(busquedaG, e.target.value)
 } 
+const quitar = e =>{
+  if (count <= 1) {
+  }else{
+    count -= 1
+   promesa =  api(busquedaG, filtro, count )
+  }
+}
+const sumar = e =>{
+  if (count >= paginas) {
+    
+  }else{
+    count += 1
+   promesa = api(busquedaG, filtro, count)
+  }
+}
 </script>
 <Header>
 <div class="change">
@@ -47,6 +68,8 @@ const cambio = e =>{
      <!-- promise was rejected -->
      <h2>{error}</h2>
    {/await}
+
+<Navegacion quitar={quitar} sumar={sumar}/>
 {:else}
    <!-- else content here -->
    <span>Realiza una busqueda</span>
