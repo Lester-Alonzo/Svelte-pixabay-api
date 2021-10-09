@@ -10,7 +10,7 @@
              <img src={item.previewURL} alt="img">
              <span class="descar">Descargas: {item.downloads}</span>
              <span class="likes"> {item.likes} 👍🏽 likes</span>
-             <a href={item.largeImageURL} target="_balnk">Ver Imagen</a>
+             <a href={item.largeImageURL} target="_balnk">Ver</a>
              </div>
         {/each}
     </div>
