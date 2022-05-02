@@ -12,3 +12,6 @@ jobs:
       - name: Say hello
         run:  |
           echo "hello"
+      - name: Dime la fecah
+        run:  date
+      - run: ls -l
